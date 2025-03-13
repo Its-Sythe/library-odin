@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="styles.css" rel="stylesheet" />
+        <script src="script.js" defer></script>
+        <title>Library</title>
+    </head>
+    <body>
+        <section class="heading">
+            <h1>Library</h1>
+        </section>
+
+        <section class="modal-popups">
+            <!-- Form modal -->
+            <div id="form-modal">
+                <form action="#" method="post" name="book" id="book">
+                    <h3>Add A New Book</h3>
+
+                    <label for="title"></label>
+                    <input type="text" id="title" placeholder="Title" required/>
+                    
+                    <label for="author"></label>
+                    <input type="text" id="author" placeholder="Author" required/>
+                    
+                    <label for="pages"></label>
+                    <input type="text" id="pages" placeholder="Pages" required/>
+                    
+                    <label for="confirm-read" id="confirm-label">
+                        Have you read this box? 
+                        <input type="checkbox" id="confirm-read">
+                    </label>
+
+                    <button type="submit">Add Book</button>
+                </form>
+            </div>
+
+            <!-- Book card -->
+            <div id="book-card">
+                <div id="book-detail">
+                    <h3 id="title">Book Title</h3>
+                    <p id="author">Book Author</p>
+                    <p id="pages">Number of Pages</p>
+                </div>
+                <div id="card-options">
+                    <button id="read-btn">Read Book</button>
+                    <button id="remove-book">Remove Book</button>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>
