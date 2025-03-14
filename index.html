@@ -10,13 +10,18 @@
     <body>
         <section class="heading">
             <h1>Library</h1>
+            <div id="add-book">
+                <button id="add-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>plus</title><path d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" /></svg>
+                    Add Book</button>
+            </div>
         </section>
 
         <section class="modal-popups">
             <!-- Form modal -->
             <div id="form-modal">
                 <form action="#" method="post" name="book" id="book">
-                    <h3>Add A New Book</h3>
+                    <h2>Add A New Book</h2>
 
                     <label for="title"></label>
                     <input type="text" id="title" placeholder="Title" required/>
@@ -28,23 +33,23 @@
                     <input type="text" id="pages" placeholder="Pages" required/>
                     
                     <label for="confirm-read" id="confirm-label">
-                        Have you read this box? 
+                        Have you read this book? 
                         <input type="checkbox" id="confirm-read">
                     </label>
 
-                    <button type="submit">Add Book</button>
+                    <button type="submit" id="submit-book">Add Book</button>
                 </form>
             </div>
 
             <!-- Book card -->
             <div id="book-card">
                 <div id="book-detail">
-                    <h3 id="title">Book Title</h3>
-                    <p id="author">Book Author</p>
-                    <p id="pages">Number of Pages</p>
+                    <h3 id="title"></h3>
+                    <p id="author"></p>
+                    <p id="pages"></p>
                 </div>
                 <div id="card-options">
-                    <button id="read-btn">Read Book</button>
+                    <button id="read-btn"></button>
                     <button id="remove-book">Remove Book</button>
                 </div>
             </div>
