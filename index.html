@@ -24,17 +24,17 @@
                     <h2>Add A New Book</h2>
 
                     <label for="title"></label>
-                    <input type="text" id="title" placeholder="Title" required/>
+                    <input type="text" id="title" placeholder="Title" autocomplete="off" required/>
                     
                     <label for="author"></label>
-                    <input type="text" id="author" placeholder="Author" required/>
+                    <input type="text" id="author" placeholder="Author" autocomplete="off" required/>
                     
                     <label for="pages"></label>
-                    <input type="text" id="pages" placeholder="Pages" required/>
+                    <input type="text" id="pages" placeholder="Pages" autocomplete="off" required/>
                     
                     <label for="confirm-read" id="confirm-label">
                         Have you read this book? 
-                        <input type="checkbox" id="confirm-read">
+                        <input type="checkbox" id="confirm-read" autocomplete="off">
                     </label>
 
                     <button type="submit" id="submit-book">Add Book</button>
@@ -42,17 +42,7 @@
             </div>
 
             <!-- Book card -->
-            <div id="book-card">
-                <div id="book-detail">
-                    <h3 id="title"></h3>
-                    <p id="author"></p>
-                    <p id="pages"></p>
-                </div>
-                <div id="card-options">
-                    <button id="read-btn"></button>
-                    <button id="remove-book">Remove Book</button>
-                </div>
-            </div>
+            <section id="cards-container"></section>
         </section>
     </body>
 </html>
