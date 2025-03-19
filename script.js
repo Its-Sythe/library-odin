@@ -47,9 +47,18 @@ function handleAddBook() {
             modal.style.display = "flex";
         } else {
             modal.style.display = "none";
+            if (myBooks.length == 0) {
+                appendBook()
+            } else if (myBooks.length != 0) {
+                for (let i = 0; i <= myBooks.length; i++) {
+                    if (formTitle.value != myBooks[i].title) {
+                        appendBook()
+                    } else if(formTitle.value == myBooks[i].title) {
+                        alert("Book Already Exists!");
+                    }
+                }
+            }
         }
-
-        appendBook();
     })
 }
 
@@ -63,6 +72,47 @@ function appendBook() {
 
     let newBook = new Book(formTitle.value, formAuthor.value, formPages.value, uniqueID);
     myBooks.push(newBook);
+    createCard(newBook);
+}
+
+// Handle dynamic card creation
+
+function createCard(book) {
+    const cardsContainer = document.querySelector(".content-container");
+    // Overall Card Creation
+    const cardContainer = document.createElement("div");
+    cardContainer.id = "book-card";
+    const cardDetails = document.createElement("div");
+    cardDetails.id = "card-details";
+    const cardOptions = document.createElement("div");
+    cardOptions.id = "card-options";
+    
+    cardContainer.append(cardDetails, cardOptions);
+
+    // Card Details portion content
+    const cardBookTitle = document.createElement("p");
+    cardBookTitle.id = "bookCard-title";
+    cardBookTitle.innerText = book.title;
+    const cardBookAuthor = document.createElement("p");
+    cardBookAuthor.id = "bookCard-author";
+    cardBookAuthor.innerText = book.author;
+    const cardBookPages = document.createElement("p");
+    cardBookPages.id = "bookCard-pages";
+    cardBookPages.innerText = book.pages;
+
+    cardDetails.append(cardBookTitle, cardBookAuthor, cardBookPages);
+
+    // Card options content
+    const cardReadBtn = document.createElement("button");
+    cardReadBtn.id = "read-bookBtn";
+    cardReadBtn.innerText = "Hello"
+    const cardBookRemove = document.createElement("button");
+    cardBookRemove.id = "remove-bookCard";
+    cardBookRemove.innerText = "Remove Book"
+
+    cardOptions.append(cardReadBtn, cardBookRemove);
+
+    cardsContainer.appendChild(cardContainer);
 }
 
 handleAddBook();
