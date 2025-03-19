@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+        <script src="script.js" defer></script>
+    </head>
+    <body>
+        <section class="heading-area">
+            <h1>Library</h1>
+            <button id="addBook-btn">Add New Book</button>
+        </section>
+        <section class="content-container"></section>
+        <section class="modal-container">
+            <div id="add-bookForm">
+                <form action="#" method="post" name="book-form" id="book-form">
+                    <div id="formHeading">
+                        <h2 id="form-heading">Add a new book</h2>
+                        <p id="close-btn">&#120;</p>
+                    </div>
+
+                    <label for="bookForm-title"></label>
+                    <input type="text" id="bookForm-title" placeholder="Title">
+                    
+                    <label for="bookForm-author"></label>
+                    <input type="text" id="bookForm-author" placeholder="Author">
+                    
+                    <label for="bookForm-pages"></label>
+                    <input type="number" id="bookForm-pages" placeholder="Pages">
+                    
+                    <label for="bookForm-read" id="readInput">
+                        Have you read this book? 
+                        <input type="checkbox" id="bookForm-read">
+                    </label>
+
+                    <button id="submit-form">Add Book</button>
+                </form>
+            </div>
+        </section>
+    </body>
+</html>

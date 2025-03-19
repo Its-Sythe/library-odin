@@ -1,0 +1,111 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: cursive;
+}
+
+body {
+    height: 100vh;
+    display: grid;
+    grid-template: 150px 1fr / 1fr;
+}
+
+/* Heading area */
+.heading-area {
+    height: 150px;
+    background-color: rgb(86, 87, 87);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 250px;
+    box-shadow: 0px 5px 10px 0px rgba(87, 85, 85, 0.986);
+}
+
+.heading-area > h1 {
+    color: white;
+    font-size: 42px;
+}
+
+.heading-area > button {
+    cursor: pointer;
+    font-size: 1.5em;
+    width: 250px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 10px 0px rgba(61, 255, 229, 0.7);
+}
+
+/* Form styling */
+#book-form {
+    width: 400px;
+    height: 500px;
+    font-size: 1.5em;
+    font-family: cursive;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    border-radius: 10px;
+    border: 1px solid;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-left: -155px;
+    margin-top: -150px;
+}
+
+#book-form > #formHeading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+#book-form > input {
+    width: 285px;
+    height: 30px;
+    font-family: cursive;
+    border-radius: 10px;
+    padding: 5px;
+    background-color: rgb(221, 221, 221);
+}
+
+#book-form > button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 25px;
+    font-size: 1.15rem;
+    font-family: cursive;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+#formHeading > #close-btn {
+    cursor: pointer;
+    font-weight: 800;
+}
+
+#readInput {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+} 
+
+#readInput > input {
+    width: 25px;
+    height: 24px;
+    cursor: pointer;
+}
+
+/* Content area styling */
+
+.content-container {
+    background-color: rgb(212, 212, 212);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 12px;
+}
