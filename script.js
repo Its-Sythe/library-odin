@@ -51,9 +51,9 @@ function handleAddBook() {
                 appendBook()
             } else if (myBooks.length != 0) {
                 for(let i = 0; i <= myBooks.length; i++) {
-                    if (formTitle.value == myBooks[i].title) {
-                        alert("Book already exists")
-                    } else if (formTitle.value != myBooks[i].title) {
+                    if (myBooks.includes(formTitle.value) {
+                        alert("Book already exists");
+                    } else if (!myBooks.includes(formTitle.value) {
                         appendBook();
                         break;
                     }
