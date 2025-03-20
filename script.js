@@ -111,6 +111,16 @@ function createCard(book) {
     cardBookRemove.id = "remove-bookCard";
     cardBookRemove.innerText = "Remove Book"
 
+    cardBookRemove.addEventListener("click", () => {
+        for (let i = 0; i <= myBooks.length; i++) {
+            if (myBooks[i].id == cardContainer.dataset.indexNumber) {
+                cardContainer.remove();
+                myBooks.splice(i, 1);
+                break;
+            }
+        }
+    })
+    
     cardOptions.append(cardReadBtn, cardBookRemove);
 
     cardsContainer.appendChild(cardContainer);
