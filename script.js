@@ -50,11 +50,12 @@ function handleAddBook() {
             if (myBooks.length == 0) {
                 appendBook()
             } else if (myBooks.length != 0) {
-                for (let i = 0; i <= myBooks.length; i++) {
-                    if (formTitle.value != myBooks[i].title) {
-                        appendBook()
-                    } else if(formTitle.value == myBooks[i].title) {
-                        alert("Book Already Exists!");
+                for(let i = 0; i <= myBooks.length; i++) {
+                    if (formTitle.value == myBooks[i].title) {
+                        alert("Book already exists")
+                    } else if (formTitle.value != myBooks[i].title) {
+                        appendBook();
+                        break;
                     }
                 }
             }
