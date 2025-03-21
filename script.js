@@ -118,14 +118,25 @@ function createCard(book) {
     cardReadBtn.id = "read-bookBtn";
     cardReadBtn.innerText = book.read;
     cardReadBtn.innerText = book.read;
+    cardReadBtn.addEventListener("click", () => {
+        if (book.read == "Read") {
+            book.read = "Not Read";
+            cardReadBtn.style.background = "linear-gradient(90deg, rgba(250, 10, 100, 0.9), rgba(200, 10, 100, 0.7)";
+        } else if (book.read == "Not Read") {
+            book.read = "Read";
+            cardReadBtn.style.background = "linear-gradient(90deg, rgba(100, 255, 100, 0.9), rgba(150, 250, 150, 0.7), rgba(200, 250, 200, 0.5)";
+        }
+    })
     if(book.read == "Read") {
-        cardReadBtn.style.background = "linear-gradient(90deg, rgba(100, 255, 100, 0.9), rgba(150, 250, 150, 0.7), rgba(200, 250, 200, 0.5)"
+        cardReadBtn.style.background = "linear-gradient(90deg, rgba(100, 255, 100, 0.9), rgba(150, 250, 150, 0.7), rgba(200, 250, 200, 0.5)";
     } else if (book.read == "Not Read") {
-        cardReadBtn.style.background = "linear-gradient(90deg, rgba(250, 10, 100, 0.9), rgba(200, 10, 100, 0.7)"
+        cardReadBtn.style.background = "linear-gradient(90deg, rgba(250, 10, 100, 0.9), rgba(200, 10, 100, 0.7)";
     }
+
     const cardBookRemove = document.createElement("button");
     cardBookRemove.id = "remove-bookCard";
-    cardBookRemove.innerText = "Remove Book"
+    cardBookRemove.innerText = "Remove Book";
+    cardBookRemove.style.background = "linear-gradient(90deg, rgba(250, 10, 10, 0.8), rgba(250, 10, 50, 0.6), rgba(250, 10, 50, 0.4)";
 
     cardBookRemove.addEventListener("click", () => {
         for (let i = 0; i <= myBooks.length; i++) {
