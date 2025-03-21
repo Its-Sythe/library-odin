@@ -51,9 +51,9 @@ function handleAddBook() {
                 appendBook()
             } else if (myBooks.length != 0) {
                 for(let i = 0; i <= myBooks.length; i++) {
-                    if (myBooks.includes(formTitle.value) {
+                    if (myBooks.includes(formTitle.value)) {
                         alert("Book already exists");
-                    } else if (!myBooks.includes(formTitle.value) {
+                    } else if (!myBooks.includes(formTitle.value)) {
                         appendBook();
                         break;
                     }
@@ -69,7 +69,7 @@ function appendBook() {
     const formTitle = document.forms["book-form"]["bookForm-title"];
     const formAuthor = document.forms["book-form"]["bookForm-author"];
     const formPages = document.forms["book-form"]["bookForm-pages"];
-    const formChecked = document.forms["book-form"]["bookForm-read].checked;
+    const formChecked = document.forms["book-form"]["bookForm-read"].checked;
     const uniqueID = crypto.randomUUID();
     let bookRead;
 
