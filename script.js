@@ -3,10 +3,11 @@ const myBooks = [];
 
 // Book constructor
 
-function Book(title, author, pages, id) {
+function Book(title, author, pages, read, id) {
     this.title = title;
     this.author = author;
     this.pages = pages;
+    this.read = read;
     this.id = id;
 }
 
@@ -48,14 +49,14 @@ function handleAddBook() {
         } else {
             modal.style.display = "none";
             if (myBooks.length == 0) {
-                appendBook()
+                appendBook();
             } else if (myBooks.length != 0) {
-                for(let i = 0; i <= myBooks.length; i++) {
-                    if (myBooks.includes(formTitle.value)) {
-                        alert("Book already exists");
-                    } else if (!myBooks.includes(formTitle.value)) {
+                for (let i = 0; i <= myBooks.length; i++) {
+                    if (myBooks[i].title != formTitle.value) {
                         appendBook();
                         break;
+                    } else if (myBooks[i].title == formTitle.value) {
+                        alert("Book already exists");
                     }
                 }
             }
@@ -79,7 +80,7 @@ function appendBook() {
         bookRead = "Not Read";
     }
 
-    let newBook = new Book(formTitle.value, formAuthor.value, formPages.value, uniqueID);
+    let newBook = new Book(formTitle.value, formAuthor.value, formPages.value, bookRead, uniqueID);
     myBooks.push(newBook);
     createCard(newBook);
 }
@@ -91,6 +92,7 @@ function createCard(book) {
     // Overall Card Creation
     const cardContainer = document.createElement("div");
     cardContainer.id = "book-card";
+    cardContainer.dataset.indexNumber = book.id;
     const cardDetails = document.createElement("div");
     cardDetails.id = "card-details";
     const cardOptions = document.createElement("div");
@@ -133,7 +135,7 @@ function createCard(book) {
                 break;
             }
         }
-    })
+    });
     
     cardOptions.append(cardReadBtn, cardBookRemove);
 
