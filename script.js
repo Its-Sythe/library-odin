@@ -1,14 +1,15 @@
-// Books array
 const myBooks = [];
 
 // Book constructor
 
-function Book(title, author, pages, read, id) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
-    this.id = id;
+class Book {
+    constructor(title, author, pages, read, id) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
+        this.id = id;
+    }
 }
 
 // Handling form popup
@@ -117,13 +118,14 @@ function createCard(book) {
     const cardReadBtn = document.createElement("button");
     cardReadBtn.id = "read-bookBtn";
     cardReadBtn.innerText = book.read;
-    cardReadBtn.innerText = book.read;
     cardReadBtn.addEventListener("click", () => {
         if (book.read == "Read") {
             book.read = "Not Read";
+            cardReadBtn.innerHTML = "Not Read"
             cardReadBtn.style.background = "linear-gradient(90deg, rgba(250, 10, 100, 0.9), rgba(200, 10, 100, 0.7)";
         } else if (book.read == "Not Read") {
             book.read = "Read";
+            cardReadBtn.innerHTML = "Read";
             cardReadBtn.style.background = "linear-gradient(90deg, rgba(100, 255, 100, 0.9), rgba(150, 250, 150, 0.7), rgba(200, 250, 200, 0.5)";
         }
     })
